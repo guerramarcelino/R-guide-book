@@ -1,0 +1,86 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "R basics for Research",
+    "section": "",
+    "text": "This book is a gentle introduction on how to program in R. Hands-on examples show challenges that researchers frequently face and how to overcome common issues associated to data visualization and data wrangling."
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Setting things up",
+    "section": "",
+    "text": "see Grolemund (2014)"
+  },
+  {
+    "objectID": "intro.html#installing-rstudio",
+    "href": "intro.html#installing-rstudio",
+    "title": "1  Setting things up",
+    "section": "1.2 Installing RStudio",
+    "text": "1.2 Installing RStudio"
+  },
+  {
+    "objectID": "intro.html#rstudio-tour",
+    "href": "intro.html#rstudio-tour",
+    "title": "1  Setting things up",
+    "section": "1.3 Rstudio tour",
+    "text": "1.3 Rstudio tour"
+  },
+  {
+    "objectID": "intro.html#installing-packages",
+    "href": "intro.html#installing-packages",
+    "title": "1  Setting things up",
+    "section": "1.4 Installing Packages",
+    "text": "1.4 Installing Packages"
+  },
+  {
+    "objectID": "intro.html#installing-rmarkdown",
+    "href": "intro.html#installing-rmarkdown",
+    "title": "1  Setting things up",
+    "section": "1.5 Installing Rmarkdown",
+    "text": "1.5 Installing Rmarkdown\nXie, Allaire, and Grolemund (2018)"
+  },
+  {
+    "objectID": "intro.html#creating-a-script",
+    "href": "intro.html#creating-a-script",
+    "title": "1  Setting things up",
+    "section": "1.6 Creating a Script",
+    "text": "1.6 Creating a Script"
+  },
+  {
+    "objectID": "intro.html#creating-a-rmarkdown-document",
+    "href": "intro.html#creating-a-rmarkdown-document",
+    "title": "1  Setting things up",
+    "section": "1.7 Creating a Rmarkdown Document",
+    "text": "1.7 Creating a Rmarkdown Document"
+  },
+  {
+    "objectID": "intro.html#creating-a-project",
+    "href": "intro.html#creating-a-project",
+    "title": "1  Setting things up",
+    "section": "1.8 Creating a Project",
+    "text": "1.8 Creating a Project\n\n\n\n\nGrolemund, Garrett. 2014. Hands-on Programming with r: Write Your Own Functions and Simulations. \" O’Reilly Media, Inc.\".\n\n\nXie, Yihui, Joseph J Allaire, and Garrett Grolemund. 2018. R Markdown: The Definitive Guide. Chapman; Hall/CRC."
+  },
+  {
+    "objectID": "start.html#data-with-r",
+    "href": "start.html#data-with-r",
+    "title": "2  Getting Started with R",
+    "section": "2.2 Data with R",
+    "text": "2.2 Data with R\n\n2.2.1 Loading Data\n\n\n2.2.2 Data Structures & Types"
+  },
+  {
+    "objectID": "datai.html",
+    "href": "datai.html",
+    "title": "3  Data Wrangling with Tidyverse",
+    "section": "",
+    "text": "TBD"
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Grolemund, Garrett. 2014. Hands-on Programming with r: Write Your\nOwn Functions and Simulations. \" O’Reilly Media, Inc.\".\n\n\nXie, Yihui, Joseph J Allaire, and Garrett Grolemund. 2018. R\nMarkdown: The Definitive Guide. Chapman; Hall/CRC."
+  }
+]

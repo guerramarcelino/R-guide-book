@@ -1,0 +1,21 @@
+# Setting things up
+
+## Installing R
+
+see @grolemund2014hands
+
+## Installing RStudio
+
+## Rstudio tour
+
+## Installing Packages
+
+## Installing Rmarkdown
+
+@xie2018r
+
+## Creating a Script
+
+## Creating a Rmarkdown Document
+
+## Creating a Project

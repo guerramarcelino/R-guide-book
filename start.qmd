@@ -1,0 +1,9 @@
+# Getting Started with R
+
+## R as a calculator
+
+## Data with R
+
+### Loading Data
+
+### Data Structures & Types
