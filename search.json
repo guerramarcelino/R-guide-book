@@ -11,63 +11,70 @@
     "href": "intro.html",
     "title": "1  Setting things up",
     "section": "",
-    "text": "see Grolemund (2014)"
+    "text": "To install R, go to this link. At the top of the web page, you have three links for downloading R, depending on your operating system. If you are using Windows, follow “Download R for Windows” -> “base.” To install R on a Mac, click “Download R for Mac.” Then, choose the latest release depending on which Mac you have: Intel or Apple silicon."
   },
   {
     "objectID": "intro.html#installing-rstudio",
     "href": "intro.html#installing-rstudio",
     "title": "1  Setting things up",
     "section": "1.2 Installing RStudio",
-    "text": "1.2 Installing RStudio"
+    "text": "1.2 Installing RStudio\nRStudio is an integrated development environment for R and is highly recommended - it makes using R much more accessible. Download RStudio for free here. Follow the default instructions."
   },
   {
     "objectID": "intro.html#rstudio-tour",
     "href": "intro.html#rstudio-tour",
     "title": "1  Setting things up",
     "section": "1.3 Rstudio tour",
-    "text": "1.3 Rstudio tour"
-  },
-  {
-    "objectID": "intro.html#installing-packages",
-    "href": "intro.html#installing-packages",
-    "title": "1  Setting things up",
-    "section": "1.4 Installing Packages",
-    "text": "1.4 Installing Packages"
-  },
-  {
-    "objectID": "intro.html#installing-rmarkdown",
-    "href": "intro.html#installing-rmarkdown",
-    "title": "1  Setting things up",
-    "section": "1.5 Installing Rmarkdown",
-    "text": "1.5 Installing Rmarkdown\nXie, Allaire, and Grolemund (2018)"
+    "text": "1.3 Rstudio tour\nThe standard RStudio set-up consists of four panes. On the top left, you have scripts where you write code and save it. On the bottom left, you have the console. The console waits for you to run coding lines, process them, and show the results of what you did (it might also output an error message). The environment shows stored information on the top right and might also report the session’s memory usage. Finally, at the bottom right, you have plots and interactive views.\n\n\n\nRStudio\n\n\nIt is possible to customize your RStudio. For instance, you can change the appearance and pane layout. Go to Tools -> Global Options -> Appearance to change font size, and editor theme."
   },
   {
     "objectID": "intro.html#creating-a-script",
     "href": "intro.html#creating-a-script",
     "title": "1  Setting things up",
-    "section": "1.6 Creating a Script",
-    "text": "1.6 Creating a Script"
+    "section": "1.4 Creating a Script",
+    "text": "1.4 Creating a Script\nTo create a script, you can either click on the top left icon and then R script or press Shift + Control/Command + N. Scripts are handy to save your work and organize tasks. For instance, if you have a project that demands data cleaning, visualization, and model estimation, you might want to create different scripts to deal with various tasks."
   },
   {
-    "objectID": "intro.html#creating-a-rmarkdown-document",
-    "href": "intro.html#creating-a-rmarkdown-document",
+    "objectID": "intro.html#dealing-with-packages",
+    "href": "intro.html#dealing-with-packages",
     "title": "1  Setting things up",
-    "section": "1.7 Creating a Rmarkdown Document",
-    "text": "1.7 Creating a Rmarkdown Document"
+    "section": "1.5 Dealing with Packages",
+    "text": "1.5 Dealing with Packages\nAlthough the base system contains many built-in tools, you will need to install packages to perform many tasks. For instance, to create beautiful visualizations, you might want to use ggplot2, included in the tidyverse collection of R packages. To run regressions with many fixed effects, I suggest fixest. At this point, you know the drill. In the console, let’s try to install tidyverse typping install.packages(\"tidyverse\") (yes, between quotation marks).\nOnce you have the package installed, there is no need to install it again. However, to use the package, you need to call it first using library():\n\n#install.packages(\"tidyverse\")\nlibrary(tidyverse)\n# tidyverse is a collection of super useful packages like ggplot2, dplyr, readr, etc...\n\nAnother detail here is the use of # in the script. If you use # before your coding lines, R won’t run them. # is also helpful if you want to make comments within your code."
+  },
+  {
+    "objectID": "intro.html#installing-r-markdown",
+    "href": "intro.html#installing-r-markdown",
+    "title": "1  Setting things up",
+    "section": "1.6 Installing R Markdown",
+    "text": "1.6 Installing R Markdown\nTo install Rmarkdown, write in the console:\n# Install from CRAN\ninstall.packages('rmarkdown')\nTo generate PDF output, you will need to install LaTeX. Your machine might already have MikTeX, but TinyTex is highly recommended. Again in the console:\ninstall.packages('tinytex')\ntinytex::install_tinytex()"
+  },
+  {
+    "objectID": "intro.html#creating-an-r-markdown-document",
+    "href": "intro.html#creating-an-r-markdown-document",
+    "title": "1  Setting things up",
+    "section": "1.7 Creating an R Markdown Document",
+    "text": "1.7 Creating an R Markdown Document\nR Markdown documents are fully reproducible and allow the use of multiple languages (R, Python, SQL). If you are teaching a class that demands to code, R Markdown will make grading much easier since the PDF would display the R coding chunk and the output right after.\nTo create an R Markdown document, click on the top left and R Markdown… -> Document. Then, choose the output format. If you want to know more about R Markdown, check Xie, Allaire, and Grolemund (2018)."
   },
   {
     "objectID": "intro.html#creating-a-project",
     "href": "intro.html#creating-a-project",
     "title": "1  Setting things up",
     "section": "1.8 Creating a Project",
-    "text": "1.8 Creating a Project\n\n\n\n\nGrolemund, Garrett. 2014. Hands-on Programming with r: Write Your Own Functions and Simulations. \" O’Reilly Media, Inc.\".\n\n\nXie, Yihui, Joseph J Allaire, and Garrett Grolemund. 2018. R Markdown: The Definitive Guide. Chapman; Hall/CRC."
+    "text": "1.8 Creating a Project\nA Project helps you to organize all the files related to a specific task:\n\nA paper you are writing.\nA replication you are doing.\nMaybe a homework assignment you have.\n\nIn that sense, a Project is a folder where you keep all the scripts, data, tables, and results of whatever the task is. Important to mention that keeping everything in one place avoids trouble with the working directory.\nOn the top left (second icon), you have the option to create a new Project. Then, New Directory -> New Project. You need to give it a name and locate it (for instance, on the Desktop). Note that you need to open the Project before opening its scripts.\n\n1.8.1 Exercise\nCreate an R Project and scripts to use during the workshop.\n\n\n\n\nXie, Yihui, Joseph J Allaire, and Garrett Grolemund. 2018. R Markdown: The Definitive Guide. Chapman; Hall/CRC."
+  },
+  {
+    "objectID": "start.html",
+    "href": "start.html",
+    "title": "2  Getting Started with R",
+    "section": "",
+    "text": "Math expressions are generally accepted in R. For instance if you type 2+2 the console will output 4.\n\n2+2\n\n[1] 4\n\n\nNow, try -, *, /, and ^ (for raising to a power). Besides that, there are many built-in math functions - check some of them here.\nWhat you will mostly do is to create objects. For example:\n\nodd<-c(1,3,5,7,9,11)\nodd\n\n[1]  1  3  5  7  9 11\n\n\nodd is a vector containing some odd numbers. A few details: c() concatenates its arguments (odd numbers from 1 to 11) to form a vector named odd. Another way to do it is using seq() :\n\nodd<-seq(from=1, to=11, by=2)\nodd\n\n[1]  1  3  5  7  9 11\n\n\nYou can easily apply functions to objects:\n\nmean(odd)\n\n[1] 6\n\nsum(odd)\n\n[1] 36\n\nmax(odd)\n\n[1] 11\n\nmin(odd)\n\n[1] 1\n\n\nLogical tests are common when dealing with data and now is a good time to get some practice. Test equality with == and inequality with <=, <, !=, >, or >=.\n\n4/2==2 # Is 4 divided by 2 equal to 2? \n\n[1] TRUE\n\n2!=3 # Is 2 different than 3? \n\n[1] TRUE\n\n2>10/5 # Is two greater than 10 divided by 5? \n\n[1] FALSE\n\n\nIt is very common to check whether something belongs to a group, and %in% is very helpful in this case:\n\n2 %in% odd # 2 does not belongs to odd\n\n[1] FALSE\n\n\nFinally, we need to talk about & (and) and | (or):\n\n2|3 %in% odd # does 2 or 3 belong to odd?\n\n[1] TRUE\n\n\n\n2 & 3 %in% odd # does 2 and 3 belong to odd?\n\n[1] TRUE\n\n\nThroughout your research, you will constantly work with strings. Any value written within a pair of single or double quotes in R is treated as a string. Below you have stored Hi and Marcelino.\n\nhi<-\"Hi\"\nname<-\"Marcelino\"\n\nThe function paste() puts things together with any separator:\n\npaste(hi, name, sep=\" \") # separating strings with space\n\n[1] \"Hi Marcelino\"\n\n\nAnother useful function is sample(). It takes a sample of the specified size from the elements of a vector using either with or without replacement. Before using sample(), to make sure we get the same results, lets start the code chunk with set.seed(123).\n\nset.seed(123)\nnumbers<-seq(1:1000)\nsample(numbers, size=2, replace = TRUE) # a random sample size 2 of numbers from 1 to 1000 (with replacement)\n\n[1] 415 463\n\nsample(numbers, size=10, replace=FALSE) # a random sample size 10 of numbers from 1 to 1000 (without replacement)\n\n [1] 179 526 195 938 818 118 299 229 244  14\n\n\nYou can also use a sample with strings:\n\nfruits<-c(\"apple\", \"orange\", \"lime\")\nsample(fruits, size=2) ## replace is False by default \n\n[1] \"orange\" \"apple\" \n\n\n\n\n\nUse sample() to simulate a fair coin toss 6 and 1,000 times. Does it look like a fair coin?\n\nHint: create a vector c(“H”, “T”) and use sample() with different sizes. Should you use replace = False or replace = True?\n\nLet's play dice! When you roll a fair die, you expect to get 1,2,3,4,5, and 6 with the same probability \\(\\frac{1}{6}\\). Hence, the mathematical expectation of that process is:\n\n\\[E[X]= \\frac{1}{6}[1+2+3+4+5+6] = 3.5\\]\nAccording to the Law of Large Numbers, if you play long enough, the sample average will get close to 3.5. Now, let's look at the histograms for each set of averages according to the sample size (number of rolls). We start rolling a dice two times, and we repeat this process 500 times. The resulting distribution is called \"the sampling distribution of the sample mean.\"\n\nroll<-sample(1:6, size=2, replace=TRUE)\nmean(roll)\n\n[1] 2.5\n\n\nUsing the function replicate() to repeat this process 500 times and plotting the histogram using hist():\n\nhist(replicate(500,mean(sample(1:6, size=2, replace=TRUE ))), main=\" \", xlab = \"Average of 2 rolls\")\n\n\n\n\nYour turn! Roll dice 100 times and repeat the process again, plotting the histogram. Does this distribution look familiar?"
   },
   {
     "objectID": "start.html#data-with-r",
     "href": "start.html#data-with-r",
     "title": "2  Getting Started with R",
     "section": "2.2 Data with R",
-    "text": "2.2 Data with R\n\n2.2.1 Loading Data\n\n\n2.2.2 Data Structures & Types"
+    "text": "2.2 Data with R\nTBD"
   },
   {
     "objectID": "datai.html",
@@ -81,6 +88,6 @@
     "href": "references.html",
     "title": "References",
     "section": "",
-    "text": "Grolemund, Garrett. 2014. Hands-on Programming with r: Write Your\nOwn Functions and Simulations. \" O’Reilly Media, Inc.\".\n\n\nXie, Yihui, Joseph J Allaire, and Garrett Grolemund. 2018. R\nMarkdown: The Definitive Guide. Chapman; Hall/CRC."
+    "text": "Xie, Yihui, Joseph J Allaire, and Garrett Grolemund. 2018. R\nMarkdown: The Definitive Guide. Chapman; Hall/CRC."
   }
 ]

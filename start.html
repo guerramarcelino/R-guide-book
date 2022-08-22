@@ -15,6 +15,69 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -56,6 +119,7 @@ ul.task-list{list-style: none;}
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -122,12 +186,11 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#r-as-a-calculator" id="toc-r-as-a-calculator" class="nav-link active" data-scroll-target="#r-as-a-calculator"> <span class="header-section-number">2.1</span> R as a calculator</a></li>
-  <li><a href="#data-with-r" id="toc-data-with-r" class="nav-link" data-scroll-target="#data-with-r"> <span class="header-section-number">2.2</span> Data with R</a>
+  <li><a href="#messing-around" id="toc-messing-around" class="nav-link active" data-scroll-target="#messing-around"> <span class="header-section-number">2.1</span> Messing around</a>
   <ul class="collapse">
-  <li><a href="#loading-data" id="toc-loading-data" class="nav-link" data-scroll-target="#loading-data"> <span class="header-section-number">2.2.1</span> Loading Data</a></li>
-  <li><a href="#data-structures-types" id="toc-data-structures-types" class="nav-link" data-scroll-target="#data-structures-types"> <span class="header-section-number">2.2.2</span> Data Structures &amp; Types</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises"> <span class="header-section-number">2.1.1</span> Exercises</a></li>
   </ul></li>
+  <li><a href="#data-with-r" id="toc-data-with-r" class="nav-link" data-scroll-target="#data-with-r"> <span class="header-section-number">2.2</span> Data with R</a></li>
   </ul>
 </nav>
     </div>
@@ -150,19 +213,152 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<section id="r-as-a-calculator" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="r-as-a-calculator"><span class="header-section-number">2.1</span> R as a calculator</h2>
+<section id="messing-around" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="messing-around"><span class="header-section-number">2.1</span> Messing around</h2>
+<p>Math expressions are generally accepted in R. For instance if you type <code>2+2</code> the console will output <code>4</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+</div>
+<p>Now, try <code>-</code>, <code>*</code>, <code>/</code>, and <code>^</code> (for raising to a power). Besides that, there are many built-in math functions - check some of them <a href="https://www.statmethods.net/management/functions.html">here</a>.</p>
+<p>What you will mostly do is to create objects. For example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>odd<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">9</span>,<span class="dv">11</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>odd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  1  3  5  7  9 11</code></pre>
+</div>
+</div>
+<p><code>odd</code> is a vector containing some odd numbers. A few details: <code>c()</code> concatenates its arguments (odd numbers from 1 to 11) to form a vector named <code>odd</code>. Another way to do it is using <code>seq()</code> :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>odd<span class="ot">&lt;-</span><span class="fu">seq</span>(<span class="at">from=</span><span class="dv">1</span>, <span class="at">to=</span><span class="dv">11</span>, <span class="at">by=</span><span class="dv">2</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>odd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  1  3  5  7  9 11</code></pre>
+</div>
+</div>
+<p>You can easily apply functions to objects:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(odd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(odd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 36</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(odd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 11</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(odd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+<p>Logical tests are common when dealing with data and now is a good time to get some practice. Test equality with <code>==</code> and inequality with <code>&lt;=</code>, <code>&lt;</code>, <code>!=</code>, <code>&gt;</code>, or <code>&gt;=</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span><span class="sc">/</span><span class="dv">2</span><span class="sc">==</span><span class="dv">2</span> <span class="co"># Is 4 divided by 2 equal to 2? </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">!=</span><span class="dv">3</span> <span class="co"># Is 2 different than 3? </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">&gt;</span><span class="dv">10</span><span class="sc">/</span><span class="dv">5</span> <span class="co"># Is two greater than 10 divided by 5? </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+</div>
+<p>It is very common to check whether something belongs to a group, and <code>%in%</code> is very helpful in this case:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">%in%</span> odd <span class="co"># 2 does not belongs to odd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE</code></pre>
+</div>
+</div>
+<p>Finally, we need to talk about <code>&amp;</code> (and) and <code>|</code> (or):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">|</span><span class="dv">3</span> <span class="sc">%in%</span> odd <span class="co"># does 2 or 3 belong to odd?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">&amp;</span> <span class="dv">3</span> <span class="sc">%in%</span> odd <span class="co"># does 2 and 3 belong to odd?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+</div>
+<p>Throughout your research, you will constantly work with strings. Any value written within a pair of single or double quotes in R is treated as a string. Below you have stored <code>Hi</code> and <code>Marcelino</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>hi<span class="ot">&lt;-</span><span class="st">"Hi"</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>name<span class="ot">&lt;-</span><span class="st">"Marcelino"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The function <code>paste()</code> puts things together with any separator:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(hi, name, <span class="at">sep=</span><span class="st">" "</span>) <span class="co"># separating strings with space</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Hi Marcelino"</code></pre>
+</div>
+</div>
+<p>Another useful function is <code>sample()</code>. It takes a sample of the specified <code>size</code> from the elements of a vector using either <code>with</code> or <code>without replacement</code>. Before using <code>sample()</code>, to make sure we get the same results, lets start the code chunk with <code>set.seed(123)</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>numbers<span class="ot">&lt;-</span><span class="fu">seq</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(numbers, <span class="at">size=</span><span class="dv">2</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="co"># a random sample size 2 of numbers from 1 to 1000 (with replacement)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 415 463</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(numbers, <span class="at">size=</span><span class="dv">10</span>, <span class="at">replace=</span><span class="cn">FALSE</span>) <span class="co"># a random sample size 10 of numbers from 1 to 1000 (without replacement)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 179 526 195 938 818 118 299 229 244  14</code></pre>
+</div>
+</div>
+<p>You can also use a sample with strings:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>fruits<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"apple"</span>, <span class="st">"orange"</span>, <span class="st">"lime"</span>)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(fruits, <span class="at">size=</span><span class="dv">2</span>) <span class="do">## replace is False by default </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "orange" "apple" </code></pre>
+</div>
+</div>
+<section id="exercises" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="exercises"><span class="header-section-number">2.1.1</span> Exercises</h3>
+<ol type="1">
+<li>Use <code>sample()</code> to simulate a fair coin toss 6 and 1,000 times. Does it look like a fair coin?</li>
+</ol>
+<p><em>Hint: create a vector c(“H”, “T”) and use <code>sample()</code> with different sizes. Should you use replace = False or replace = True?</em></p>
+<ol start="2" type="1">
+<li>Let's play dice! When you roll a fair die, you expect to get 1,2,3,4,5, and 6 with the same probability <span class="math inline">\(\frac{1}{6}\)</span>. Hence, the mathematical expectation of that process is:</li>
+</ol>
+<p><span class="math display">\[E[X]= \frac{1}{6}[1+2+3+4+5+6] = 3.5\]</span></p>
+<p>According to the Law of Large Numbers, if you play long enough, <a href="https://guerramarcelino.github.io/Econ474/Lectures/Lec1/lec1?panelset=lln&amp;panelset1=lln2#9">the sample average will get close to 3.5</a>. Now, let's look at the histograms for each set of averages according to the sample size (number of rolls). We start rolling a dice two times, and we repeat this process 500 times. The resulting distribution is called "the sampling distribution of the sample mean."</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>roll<span class="ot">&lt;-</span><span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">size=</span><span class="dv">2</span>, <span class="at">replace=</span><span class="cn">TRUE</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(roll)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.5</code></pre>
+</div>
+</div>
+<p>Using the function <code>replicate()</code> to repeat this process 500 times and plotting the histogram using <code>hist()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">replicate</span>(<span class="dv">500</span>,<span class="fu">mean</span>(<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">size=</span><span class="dv">2</span>, <span class="at">replace=</span><span class="cn">TRUE</span> ))), <span class="at">main=</span><span class="st">" "</span>, <span class="at">xlab =</span> <span class="st">"Average of 2 rolls"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="start_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Your turn! Roll dice <strong>100 times</strong> and repeat the process again, plotting the histogram. Does this distribution look familiar?</p>
+</section>
 </section>
 <section id="data-with-r" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="data-with-r"><span class="header-section-number">2.2</span> Data with R</h2>
-<section id="loading-data" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="loading-data"><span class="header-section-number">2.2.1</span> Loading Data</h3>
-</section>
-<section id="data-structures-types" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="data-structures-types"><span class="header-section-number">2.2.2</span> Data Structures &amp; Types</h3>
+<p>TBD</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
