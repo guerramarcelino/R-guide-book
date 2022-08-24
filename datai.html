@@ -192,7 +192,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#merging-datasets" id="toc-merging-datasets" class="nav-link" data-scroll-target="#merging-datasets"> <span class="header-section-number">3.5</span> Merging datasets</a></li>
   <li><a href="#drop_na-and-replace_na" id="toc-drop_na-and-replace_na" class="nav-link" data-scroll-target="#drop_na-and-replace_na"> <span class="header-section-number">3.6</span> drop_na() and replace_na()</a></li>
   <li><a href="#exercise-iii-in-and-notin-more-summarize" id="toc-exercise-iii-in-and-notin-more-summarize" class="nav-link" data-scroll-target="#exercise-iii-in-and-notin-more-summarize"> <span class="header-section-number">3.7</span> Exercise III: <code>%in%</code> and <code>%notin%</code> more summarize()</a></li>
-  <li><a href="#exercise-iv-airbnb-and-chicago-communities" id="toc-exercise-iv-airbnb-and-chicago-communities" class="nav-link" data-scroll-target="#exercise-iv-airbnb-and-chicago-communities"> <span class="header-section-number">3.8</span> Exercise IV: Airbnb and Chicago Communities</a></li>
+  <li><a href="#group_by-and-ungroup" id="toc-group_by-and-ungroup" class="nav-link" data-scroll-target="#group_by-and-ungroup"> <span class="header-section-number">3.8</span> group_by() and ungroup()</a></li>
+  <li><a href="#exercise-iv-airbnb-and-chicago-communities" id="toc-exercise-iv-airbnb-and-chicago-communities" class="nav-link" data-scroll-target="#exercise-iv-airbnb-and-chicago-communities"> <span class="header-section-number">3.9</span> Exercise IV: Airbnb and Chicago Communities</a></li>
   </ul>
 </nav>
     </div>
@@ -409,8 +410,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>2. Using <code>full_data2</code>, get the top 5 and bottom 10 <strong>counties</strong> in terms of <strong>% of people eligible for Medicare</strong>. Check also the top 5 and bottom 10 <strong>states</strong> concerning the <strong>total ICU beds</strong>.</p>
 <p><em>Hint:</em> The column <code>EligibleforMedicare18</code> refers to the number of people eligible for Medicare per county in 2018. Note that you also have the estimated 2018 population (<code>PopulationEstimate2018</code> column).</p>
 </section>
-<section id="exercise-iv-airbnb-and-chicago-communities" class="level2" data-number="3.8">
-<h2 data-number="3.8" class="anchored" data-anchor-id="exercise-iv-airbnb-and-chicago-communities"><span class="header-section-number">3.8</span> Exercise IV: Airbnb and Chicago Communities</h2>
+<section id="group_by-and-ungroup" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="group_by-and-ungroup"><span class="header-section-number">3.8</span> group_by() and ungroup()</h2>
+<p>We already saw how <code>group_by</code> works. But what if you want to preserve your dataset but add a new column with some group level information? For instance, what if you want to add a column with state-level information about total ICU beds?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>full_data2<span class="ot">&lt;-</span>full_data2<span class="sc">%&gt;%</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(StateName)<span class="sc">%&gt;%</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">StateICU=</span><span class="fu">sum</span>(ICU_beds)</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    )<span class="sc">%&gt;%</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exercise-iv-airbnb-and-chicago-communities" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="exercise-iv-airbnb-and-chicago-communities"><span class="header-section-number">3.9</span> Exercise IV: Airbnb and Chicago Communities</h2>
 <p>The first dataset <a href="https://github.com/guerramarcelino/UrbanEconomics/raw/master/Datasets/airbnb.RDS">Airbnb.RDS</a> refers to Airbnb rentals, socioeconomic indicators, and crime by community area in Chicago. The <a href="https://github.com/guerramarcelino/UrbanEconomics/raw/master/Datasets/communities.xls">Communities.xls</a> file contains health and socioeconomic indicators for the 77 community areas of Chicago, 2012-2014.</p>
 <ol type="1">
 <li><p>Import both datasets and use <code>View()</code> to check them.</p></li>
